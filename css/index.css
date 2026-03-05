@@ -35,14 +35,14 @@ body {
 /* ============================
    COLUMNAS
 ============================ */
-.left, .right {
+.left,
+.right {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 2;
-
 }
 
 /* ============================
@@ -82,13 +82,13 @@ body {
     width: 390px;
     background: #fff;
     border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 23px 56px 57px;
 }
 
 .card h2 {
-    color: #8B4513;
+    color: #8b4513;
     font-weight: 800;
     font-size: 24px;
 }
@@ -111,7 +111,7 @@ input {
     width: 100%;
     padding: 10px;
     border: none;
-    border-bottom: 2px solid #AA0E0E;
+    border-bottom: 2px solid #aa0e0e;
     outline: none;
     font-size: 14px;
     background: transparent;
@@ -140,7 +140,7 @@ input:focus {
 .button-inicio {
     width: 100%;
     height: 42px;
-    background: #AA480B;
+    background: #aa480b;
     border: none;
     border-radius: 50px;
     color: white;
@@ -148,9 +148,13 @@ input:focus {
     cursor: pointer;
     transition: 0.3s;
     font-weight: 700;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
 }
 
-button:hover {
+.button-inicio:hover {
     background: #a64510;
 }
 
@@ -161,7 +165,6 @@ button:hover {
     margin-top: 13px;
     font-size: 12px;
     text-align: center;
-   
 }
 
 .login-text a {
@@ -191,4 +194,3 @@ button:hover {
         margin: 30px 0;
     }
 }
-
