@@ -1,0 +1,194 @@
+/* ============================
+   RESET GENERAL
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ============================
+   ESTILOS GENERALES
+============================ */
+body {
+    height: 100vh;
+    background: url("../img/fondo_1.svg") no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================
+   CONTENEDOR PRINCIPAL
+============================ */
+.container {
+    width: 90%;
+    background: url("../img/fondo_2.svg") no-repeat center / cover;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 80%;
+}
+
+/* ============================
+   COLUMNAS
+============================ */
+.left, .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+}
+
+/* ============================
+   LADO IZQUIERDO
+============================ */
+.left {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+}
+
+.logo {
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+.left-titulo {
+    color: rgb(201, 9, 9);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.left-subtitulo {
+    color: rgb(230, 42, 42);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.left p {
+    color: #444;
+}
+
+/* ============================
+   TARJETA LOGIN
+============================ */
+.card {
+    width: 390px;
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 23px 56px 57px;
+}
+
+.card h2 {
+    color: #8B4513;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.card span {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+}
+
+/* ============================
+   FORMULARIO
+============================ */
+form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #AA0E0E;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+input::placeholder {
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input:focus {
+    border-bottom: 2px solid #e67e22;
+}
+
+.input-correo {
+    margin-bottom: 25px;
+}
+.input-password {
+    margin-bottom: 20px;
+}
+
+/* ============================
+   BOTÓN
+============================ */
+.button-inicio {
+    width: 100%;
+    height: 42px;
+    background: #AA480B;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 700;
+}
+
+button:hover {
+    background: #a64510;
+}
+
+/* ============================
+   LINKS
+============================ */
+.login-text {
+    margin-top: 13px;
+    font-size: 12px;
+    text-align: center;
+   
+}
+
+.login-text a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .card {
+        margin: 30px 0;
+    }
+}
+

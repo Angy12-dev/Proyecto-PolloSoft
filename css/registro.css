@@ -1,0 +1,18 @@
+.container-form {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-rol {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #AA0E0E;
+    padding: 10px 10px 10px 6px;
+    font-size: 12px;
+}
+
+.select-rol:focus-visible {
+    outline: none;
+}
+
