@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* ============================
+   LADO IZQUIERDO
+============================ */
+
+.contenedor-menu {
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 3px 0px 40px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-menu {
+    height: 100px;
+    background: #f4bf87;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #6e675a;
+}
+
+.card-menu h1 {
+    margin: 0px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px 100px;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.side-menu a i {
+    width: 20px;
+    text-align: center;
+}
+
+.side-menu nav {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-btn-sesion {
+    margin-top: auto;
+    padding: 20px;
+}
+
+.btn-cerrar-sesion {
+    width: 100%;
+    background-color: #c0440a;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #a33508;
+}
+
+/* ============================
+   LADO DERECHO
+============================ */
+
+.card-centro {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-self: stretch;
+    border: 1px solid #6e675a;
+    text-align: center;
+}
+
+.container-title {
+    background: #f4bf87;
+    box-shadow: 20px 0px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid #6e675a;
+}
+
+.card-info {
+    overflow-y: scroll;
+    padding-bottom: 30px;
+}
+
+.card-centro h2 {
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+    width: 100%;
+}
+
+.tarjeta-rentabilidad {
+    padding: 30px 40px;
+    width: 90%;
+    max-width: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.lote {
+    font-size: 13px;
+    color: #181717;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.utilidad-total {
+    font-size: 36px;
+    font-weight: 800;
+    color: #222;
+    margin: 0;
+    text-align: left;
+}
+
+.utilidad-neta {
+    font-size: 13px;
+    color: #27ae60;
+    margin-top: 5px;
+    text-align: left;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #1f1d1d;
+    margin: 20px 0;
+}
+
+.indicadores {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.indicador {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    min-width: 120px;
+}
+
+.punto {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.amarillo {
+    background-color: #f0b429;
+}
+.verde {
+    background-color: #2d6a2d;
+}
+.gris {
+    background-color: #555555;
+}
+
+.label {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.valor {
+    font-size: 15px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.grafica {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.barra {
+    width: 35px;
+    border-radius: 4px 4px 0 0;
+}
+
+.amarillo-barra {
+    background-color: #f0b429;
+}
+.verde-barra {
+    background-color: #2d6a2d;
+}
+.gris-barra {
+    background-color: #555555;
+}
+
+.btn-registrar {
+    background-color: #c0440a;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.btn-registrar:hover {
+    background-color: #a33508;
+}
+.side-menu a.activo {
+    color: #c0440a;
+}
+
+.side-menu a.activo i {
+    color: #c0440a;
+}

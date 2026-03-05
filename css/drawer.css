@@ -1,0 +1,323 @@
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.overlay.activo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Panel lateral */
+.panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 460px;
+    max-width: 95vw;
+    background: #fff;
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.18);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panel.activo {
+    transform: translateX(0);
+}
+
+/* Encabezado */
+.panel-header {
+    background: #c0440a;
+    padding: 26px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.panel-header h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+.btn-cerrar {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+.btn-cerrar:hover {
+    color: #fff;
+}
+
+/* Cuerpo del formulario */
+.panel-body {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.campo label span {
+    color: #c87533;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1.5px solid #e0d8cf;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #faf8f5;
+    color: #797777;
+    font-family: inherit;
+    outline: none;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #c87533;
+    box-shadow: 0 0 0 3px rgba(200, 117, 51, 0.15);
+}
+.campo select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+/* Inventario */
+.fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Rentabilidad */
+.fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Separador */
+.separador {
+    border: none;
+    border-top: 1px solid #e0d8cf;
+    margin: 4px 0;
+}
+
+/* Resumen calculado */
+.resumen {
+    background: #faf8f5;
+    border: 1.5px solid #e0d8cf;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Ventas */
+.input-prefijo {
+    position: relative;
+}
+.input-prefijo span {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-weight: 600;
+    font-size: 15px;
+    pointer-events: none;
+}
+.input-prefijo input {
+    padding-left: 26px;
+}
+
+/* Input con sufijo kg */
+.input-sufijo {
+    position: relative;
+}
+.input-sufijo small {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 13px;
+    pointer-events: none;
+}
+.input-sufijo input {
+    padding-right: 40px;
+}
+
+/* Resumen valor total */
+.resumen-total {
+    background: #faf8f5;
+    border: 1.5px solid #e0d8cf;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.resumen-total.visible {
+    display: flex;
+}
+.resumen-total .etiqueta {
+    font-size: 13px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.resumen-total .valor-total {
+    font-size: 22px;
+    font-weight: 900;
+    color: #c87533;
+}
+
+.resumen.visible {
+    display: flex;
+}
+
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+.resumen-fila .etiqueta {
+    color: #888;
+    font-weight: 600;
+}
+.resumen-fila .valor {
+    font-weight: 800;
+    color: #1a1a1a;
+    font-size: 15px;
+}
+.resumen-fila .valor.positivo {
+    color: #2e7d32;
+}
+.resumen-fila .valor.negativo {
+    color: #c62828;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.monto-wrapper {
+    position: relative;
+}
+.monto-wrapper > span {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-weight: 600;
+    font-size: 15px;
+    pointer-events: none;
+}
+.monto-wrapper input {
+    padding-left: 26px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.estado-preview {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+}
+.estado-preview.en-stock {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+.estado-preview.bajo-stock {
+    background: #fdecea;
+    color: #c62828;
+}
+.estado-preview.oculto {
+    display: none;
+}
+
+/* Botones de acción */
+.acciones {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+.btn-guardar,
+.btn-cancelar {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.1s;
+}
+.btn-guardar {
+    background: #c0440a;
+    color: #fff;
+    border: none;
+}
+.btn-guardar:hover {
+    background: #c87533;
+}
+.btn-guardar:active {
+    transform: scale(0.98);
+}
+
+.btn-cancelar {
+    background: #fff;
+    color: #c0440a;
+    border: 2px solid #c0440a;
+}

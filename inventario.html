@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inventario - PolloSoft</title>
+        <link rel="stylesheet" href="css/Formularios.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="css/drawer.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- LADO IZQUIERDO-->
+            <div class="contenedor-menu">
+                <div class="card-menu">
+                    <h1>PolloSoft</h1>
+                </div>
+                <aside class="side-menu">
+                    <nav>
+                        <a href="ventas.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Ventas
+                        </a>
+                        <a href="inventario.html" class="activo">
+                            <i class="fa-solid fa-box-archive"></i>
+                            Inventario
+                        </a>
+                        <a href="costos.html">
+                            <i class="fa-solid fa-calculator"></i>
+                            Costos de Producción
+                        </a>
+                        <a href="rentabilidad.html">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            Rentabilidad
+                        </a>
+                    </nav>
+                </aside>
+                <div class="contenedor-btn-sesion">
+                    <button class="btn-cerrar-sesion">Cerrar Sesión</button>
+                </div>
+            </div>
+            <!-- LADO DERECHO -->
+            <div class="card-centro">
+                <div class="container-title">
+                    <h2>Registro de Inventario</h2>
+                </div>
+
+                <div class="contenido-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Fecha</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Unidades</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ALM-001</td>
+                                <td>2026/01/15</td>
+                                <td>Alimento iniciador</td>
+                                <td>3</td>
+                                <td>Bultos</td>
+                                <td class="bajo-stock">Bajo stock</td>
+                            </tr>
+                            <tr>
+                                <td>ALM-002</td>
+                                <td>2026/01/15</td>
+                                <td>Alimento engorde</td>
+                                <td>20</td>
+                                <td>Unidades</td>
+                                <td class="en-stock">En stock</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-registrar" onclick="abrirPanel()">
+                        Registrar Inventario
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="cerrarPanel()"></div>
+
+        <!-- Panel lateral -->
+        <div class="panel" id="panel">
+            <div class="panel-header">
+                <h2>Registrar Inventario</h2>
+                <button class="btn-cerrar" onclick="cerrarPanel()">✕</button>
+            </div>
+
+            <div class="panel-body">
+                <div class="campo">
+                    <label for="id">ID </label>
+                    <input type="text" id="id" placeholder="Ej: ALM-003" />
+                </div>
+
+                <!-- Producto -->
+                <div class="campo">
+                    <label for="producto">Producto </label>
+                    <input
+                        type="text"
+                        id="producto"
+                        placeholder="Nombre del producto"
+                    />
+                </div>
+
+                <!-- Cantidad y Unidades -->
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="cantidad">Cantidad </label>
+                        <input
+                            type="number"
+                            id="cantidad"
+                            placeholder="0"
+                            min="0"
+                            oninput="actualizarEstado()"
+                        />
+                    </div>
+                    <div class="campo">
+                        <label for="unidades">Unidades </label>
+                        <select id="unidades">
+                            <option value="" disabled selected>
+                                Seleccionar
+                            </option>
+                            <option>Bultos</option>
+                            <option>Unidades</option>
+                            <option>Frascos</option>
+                            <option>Kilos</option>
+                            <option>Litros</option>
+                            <option>Cajas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Estado -->
+                <div class="campo">
+                    <span class="estado-preview oculto" id="estadoBadge"></span>
+                    <input type="hidden" id="estado" />
+                </div>
+
+                <!-- Botones -->
+                <div class="acciones">
+                    <button class="btn-guardar" onclick="guardar()">
+                        Guardar
+                    </button>
+                    <button class="btn-cancelar" onclick="cerrarPanel()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

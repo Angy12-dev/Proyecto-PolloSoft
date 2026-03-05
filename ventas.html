@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ventas - PolloSoft</title>
+        <link rel="stylesheet" href="css/Formularios.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="css/drawer.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- LADO IZQUIERDO-->
+            <div class="contenedor-menu">
+                <div class="card-menu">
+                    <h1>PolloSoft</h1>
+                </div>
+                <aside class="side-menu">
+                    <nav>
+                        <a href="ventas.html" class="activo">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Ventas
+                        </a>
+                        <a href="inventario.html">
+                            <i class="fa-solid fa-box-archive"></i>
+                            Inventario
+                        </a>
+                        <a href="costos.html">
+                            <i class="fa-solid fa-calculator"></i>
+                            Costos de Producción
+                        </a>
+                        <a href="rentabilidad.html">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            Rentabilidad
+                        </a>
+                    </nav>
+                </aside>
+                <div class="contenedor-btn-sesion">
+                    <button class="btn-cerrar-sesion">Cerrar Sesión</button>
+                </div>
+            </div>
+            <!-- LADO DERECHO -->
+            <div class="card-centro">
+                <div class="container-title">
+                    <h2>Registro de Ventas</h2>
+                </div>
+
+                <div class="contenido-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Fecha</th>
+                                <th>Cantidad</th>
+                                <th>Peso (kg)</th>
+                                <th>Valor Unitario</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>V023</td>
+                                <td>2026/01/15</td>
+                                <td>10</td>
+                                <td>17 kg</td>
+                                <td>$12.000</td>
+                                <td>$120.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-registrar" onclick="abrirPanel()">
+                        Nueva Venta
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="cerrarPanel()"></div>
+
+        <!-- Panel lateral -->
+        <div class="panel" id="panel">
+            <div class="panel-header">
+                <h2>Registrar Venta</h2>
+                <button class="btn-cerrar" onclick="cerrarPanel()">✕</button>
+            </div>
+
+            <div class="panel-body">
+                <!-- ID -->
+                <div class="campo">
+                    <label for="id">ID </label>
+                    <input type="text" id="id" placeholder="Ej: V024" />
+                </div>
+
+                <!-- Fecha -->
+                <div class="campo">
+                    <label for="fecha">Fecha </label>
+                    <input type="date" id="fecha" />
+                </div>
+
+                <!-- Cantidad -->
+                <div class="campo">
+                    <label for="cantidad">Cantidad </label>
+                    <input
+                        type="number"
+                        id="cantidad"
+                        placeholder="0"
+                        min="0"
+                        oninput="calcularTotal()"
+                    />
+                </div>
+
+                <!-- Peso -->
+                <div class="campo">
+                    <label for="peso">Peso (kg)</label>
+                    <div class="input-sufijo">
+                        <input
+                            type="number"
+                            id="peso"
+                            placeholder="0.0"
+                            min="0"
+                            step="0.1"
+                        />
+                        <small>kg</small>
+                    </div>
+                </div>
+
+                <!-- Valor Unitario -->
+                <div class="campo">
+                    <label for="valorUnitario">Valor Unitario</label>
+                    <div class="input-prefijo">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="valorUnitario"
+                            placeholder="0"
+                            min="0"
+                            oninput="calcularTotal()"
+                        />
+                    </div>
+                </div>
+
+                <!-- Valor Total calculado -->
+                <div class="resumen-total" id="resumenTotal">
+                    <span class="etiqueta">Valor Total</span>
+                    <span class="valor-total" id="valorTotal">$ 0</span>
+                </div>
+
+                <!-- Botones -->
+                <div class="acciones">
+                    <button class="btn-guardar" onclick="guardar()">
+                        Guardar
+                    </button>
+                    <button class="btn-cancelar" onclick="cerrarPanel()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Costos - PolloSoft</title>
+        <link rel="stylesheet" href="css/Formularios.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="css/drawer.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- LADO IZQUIERDO-->
+            <div class="contenedor-menu">
+                <div class="card-menu">
+                    <h1>PolloSoft</h1>
+                </div>
+                <aside class="side-menu">
+                    <nav>
+                        <a href="ventas.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Ventas
+                        </a>
+                        <a href="inventario.html">
+                            <i class="fa-solid fa-box-archive"></i>
+                            Inventario
+                        </a>
+                        <a href="costos.html" class="activo">
+                            <i class="fa-solid fa-calculator"></i>
+                            Costos de Producción
+                        </a>
+                        <a href="rentabilidad.html">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            Rentabilidad
+                        </a>
+                    </nav>
+                </aside>
+                <div class="contenedor-btn-sesion">
+                    <button class="btn-cerrar-sesion">Cerrar Sesión</button>
+                </div>
+            </div>
+            <!-- LADO DERECHO -->
+            <div class="card-centro">
+                <div class="container-title">
+                    <h2>Registro de Costos de producción</h2>
+                </div>
+
+                <div class="contenido-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Tipo de Costo</th>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-06-01</td>
+                                <td>Alimento</td>
+                                <td>Concentrado iniciador</td>
+                                <td>10 Bultos</td>
+                                <td>$85.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn-registrar" onclick="abrirPanel()">
+                        Registrar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="cerrarPanel()"></div>
+
+        <!-- Panel lateral -->
+        <div class="panel" id="panel">
+            <div class="panel-header">
+                <h2>Registrar Costos</h2>
+                <button class="btn-cerrar" onclick="cerrarPanel()">✕</button>
+            </div>
+
+            <div class="panel-body">
+                <div class="campo">
+                    <label>Fecha </label>
+                    <input type="date" id="fecha" />
+                </div>
+                <div class="campo">
+                    <label for="tipo">Tipo de Costo</label>
+                    <select id="tipo">
+                        <option value="" disabled selected>
+                            Seleccionar un tipo
+                        </option>
+                        <option>Insumos</option>
+                        <option>Mano de Obra</option>
+                        <option>Equipos</option>
+                        <option>Costos operativos</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label>Descripción</label>
+                    <textarea
+                        id="descripcion"
+                        placeholder="Ingrese una descripción"
+                    ></textarea>
+                </div>
+
+                <div class="campo">
+                    <label>Cantidad</label>
+                    <input
+                        type="text"
+                        id="cantidad"
+                        placeholder="Ej: 10 Bultos"
+                    />
+                </div>
+                <div class="campo">
+                    <label>Monto</label>
+                    <div class="monto-wrapper">
+                        <span>$</span>
+                        <input
+                            type="number"
+                            id="monto"
+                            placeholder="0.00"
+                            step="0.01"
+                            min="0"
+                        />
+                    </div>
+                </div>
+                <!-- Botones -->
+                <div class="acciones">
+                    <button class="btn-guardar" onclick="guardar()">
+                        Guardar
+                    </button>
+                    <button class="btn-cancelar" onclick="cerrarPanel()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
